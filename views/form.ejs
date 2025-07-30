@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Movie Submission</title>
+    <link rel="stylesheet" href="/css/styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Submit Your Favorite Movie</h1>
+        <% if (error) { %>
+            <p class="error"><%= error %></p>
+        <% } %>
+        <form action="/submit" method="POST">
+            <label for="movie">Movie name:</label>
+            <input type="text" id="movie" name="movie" required>
+
+            <label for="rating">Rating (1-10):</label>
+            <input type="number" id="rating" name="rating" min="1" max="10" required>
+
+            <button type="submit">Submit</button>
+        </form>
+    </div>
+</body>
+</html>
